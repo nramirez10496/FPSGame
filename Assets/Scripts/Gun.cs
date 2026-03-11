@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Gun : MonoBehaviour
     [SerializeField] int maxAmmo;
     [SerializeField] float timeBetweenShots = 0.1f;
 
+    //events
+    [SerializeField] UnityEvent<int> OnAmmoChange;
+
     // private variables
     int ammo;
     float elapsed = 0;
@@ -21,6 +25,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         ammo = maxAmmo;
+        OnAmmoChange.Invoke(ammo);//update ammo
     }
 
     // Update is called once per frame
@@ -46,6 +51,7 @@ public class Gun : MonoBehaviour
         anim.SetTrigger("shoot");
         timeBetweenShots = 0;
         ammo -= 1;
+        OnAmmoChange.Invoke(ammo);//update ammo
 
         return true;
     }
@@ -53,5 +59,6 @@ public class Gun : MonoBehaviour
     public void AddAmmo(int amount)
     {
         ammo += amount;
+        OnAmmoChange.Invoke(ammo);//update ammo
     }
 }
