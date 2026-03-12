@@ -20,7 +20,9 @@ public class FPSController : MonoBehaviour
     [SerializeField] float jumpForce = 10;
 
     //events
-    [SerializeField] UnityEvent OnFire;
+    [SerializeField] UnityEvent OnFire;//for gun kickback
+    [SerializeField] UnityEvent OnDamage;//for damage screen fade
+
 
     // private variables
     Vector3 velocity;
@@ -176,6 +178,7 @@ public class FPSController : MonoBehaviour
             var collisionPoint = hit.collider.ClosestPoint(transform.position);
             var knockbackAngle = (transform.position - collisionPoint).normalized;
             velocity = (20 * knockbackAngle);
+            OnDamage.Invoke();//unity event for camera fade when damaged 
         }
     }
 }

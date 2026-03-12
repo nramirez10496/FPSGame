@@ -2,7 +2,7 @@
 - Project name: FPSGame
 - Unity version: Unity 6000.0.66f2
 - Active game object:
-  - Name: Ammo Current Text
+  - Name: Player
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Player
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
