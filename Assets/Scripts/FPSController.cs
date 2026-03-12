@@ -22,6 +22,7 @@ public class FPSController : MonoBehaviour
     //events
     [SerializeField] UnityEvent OnFire;//for gun kickback
     [SerializeField] UnityEvent OnDamage;//for damage screen fade
+    public UnityEvent OnInteract;//for interact for ammo
 
 
     // private variables
@@ -58,6 +59,7 @@ public class FPSController : MonoBehaviour
         Look();
 
         FireGun();
+        IfInteract();//call function
 
         // always go back to "no velocity"
         // "velocity" is for movement speed that we gain in addition to our movement (falling, knockback, etc.)
@@ -179,6 +181,14 @@ public class FPSController : MonoBehaviour
             var knockbackAngle = (transform.position - collisionPoint).normalized;
             velocity = (20 * knockbackAngle);
             OnDamage.Invoke();//unity event for camera fade when damaged 
+        }
+    }
+
+    public void IfInteract()
+    {
+        if (Input.GetKeyDown(KeyCode.E))//if e is pressed
+        {
+            OnInteract.Invoke();//unity event to refill ammo when near refill station 
         }
     }
 }

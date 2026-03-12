@@ -2,7 +2,7 @@
 - Project name: FPSGame
 - Unity version: Unity 6000.0.66f2
 - Active game object:
-  - Name: Player
+  - Name: Basic Blaster
   - Tag: Untagged
-  - Layer: Player
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -1741,6 +1741,7 @@ GameObject:
   - component: {fileID: 529948331}
   - component: {fileID: 529948330}
   - component: {fileID: 529948329}
+  - component: {fileID: 529948333}
   m_Layer: 11
   m_Name: Ammo Refill Station
   m_TagString: Untagged
@@ -1840,6 +1841,18 @@ Transform:
   - {fileID: 1192293103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529948333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529948328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d403b3b032fc4fc45ad6eb4b8e0d1edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578820793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,6 +5895,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2071811437
 MonoBehaviour:
   m_ObjectHideFlags: 0
